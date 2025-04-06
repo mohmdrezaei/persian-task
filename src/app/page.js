@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
 
 import "swiper/css";
-import { Navigation ,  Autoplay,} from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import { FaHandHoldingDollar } from "react-icons/fa6";
 
 export default function Home() {
@@ -31,7 +31,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="!bg-[#F9F9F9] py-10 ">
+      <section className="!bg-[#F9F9F9] py-10 ">
         <div className="bg-gradient-to-b from-[#43217C] to-[#7A3DE2]  pt-4 h-[240px]">
           <div className="mt-5 w-[1200px] m-auto">
             <h3 className="text-center text-white text-xl font-[500] ">
@@ -45,9 +45,9 @@ export default function Home() {
                 loop={true}
                 autoplay={{
                   delay: 2500,
-                 pauseOnMouseEnter : true
+                  pauseOnMouseEnter: true,
                 }}
-                modules={[Navigation , Autoplay]}
+                modules={[Navigation, Autoplay]}
                 className="mySwiper"
               >
                 <SwiperSlide>
@@ -179,7 +179,77 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+
+        <div className="mt-48 text-center w-[1200px] m-auto">
+          <h1 className="text-xl font-[600]">فرم دریافت مشاوره</h1>
+          <p className="font-[500] text-base text-[#303030] mt-5">
+            برای ارتقای بیزینس خود به دنبال فرصتی ناب هستید؟ فرم زیر را تکمیل
+            کنید تا مشاوران ما به صورت کاملان رایگان شمارا راهنمایی کنند.
+          </p>
+
+          <div className="bg-white border border-[#E3E3E3] rounded-lg h-[606px] p-7 text-right">
+            <div className="grid grid-cols-3 gap-7 rounded-2xl">
+              <div>
+                <p>نام و نام خانوادگی خود را وارد کنید</p>
+                <input
+                  className="border border-[#E3E3E3] bg-[#FCFCFC] w-full rounded-2xl px-8 py-2 placeholder:text-[#8A8A8A] placeholder:font-[500] mt-4"
+                  placeholder="نام و نام خانوادگی"
+                />
+              </div>
+              <div>
+                <p>آدرس ایمیل خود را وارد کنید</p>
+                <input
+                  className="border border-[#E3E3E3] bg-[#FCFCFC] w-full rounded-2xl px-8 py-2 placeholder:text-[#8A8A8A] placeholder:font-[500] mt-4"
+                  placeholder="مثلا email@mail.com"
+                />
+              </div>
+              <div>
+                <p>شماره تماس خود را وارد کنید</p>
+                <input
+                  className="border border-[#E3E3E3] bg-[#FCFCFC] w-full rounded-2xl px-8 py-2 placeholder:text-[#8A8A8A] placeholder:font-[500] mt-4"
+                  placeholder="مثلا091212345678"
+                />
+              </div>
+            </div>
+
+            <div className="mt-7">
+              <p>نوع سرویس (های) مورد نظر را انتخاب کنید</p>
+              <input
+                className="border border-[#E3E3E3] bg-[#FCFCFC] w-full rounded-2xl px-8 py-2 placeholder:text-[#8A8A8A] placeholder:font-[500] mt-5"
+                placeholder="مثلا email@mail.com"
+              />
+            </div>
+            <div className="mt-10">
+              <p>در مورد درخواست خود برای ما بنویسید.</p>
+              <textarea
+                className="border border-[#E3E3E3] bg-[#FCFCFC] w-full rounded-2xl px-8 py-2 placeholder:text-[#8A8A8A] placeholder:font-[500] h-[171px] mt-5"
+                placeholder="توضیحات (اختیاری)"
+              />
+            </div>
+
+            <div className=" flex justify-center mt-5 ">
+              <button className=" bg-[#303030] text-white w-[386px]  h-[40px] text-center m-auto rounded-2xl font-[600]">
+                ثبت درخواست
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#FCFCFC] py-10">
+      
+          <div className="flex w-[1200px] border border-[#F9F9F9] bg-white m-auto rounded-lg h-[554px] ">
+            <div >
+            <h1 className="text-[32px] font-[600]">FAQ</h1>
+            <h1 className="text-[24px] font-[600]">سوالات متداولی که از ما می‌پرسید</h1>
+            <p className="text-">
+              سوالات متداولی که ممکن است نیاز شما نیز باشند در اینجا پاسخ داده
+              شده اند:
+            </p>
+            </div>
+         
+        </div>
+      </section>
     </main>
   );
 }
