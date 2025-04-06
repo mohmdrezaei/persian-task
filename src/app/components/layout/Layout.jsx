@@ -7,7 +7,7 @@ function Layout({ children }) {
     <>
       <Header />
       <div className="bg-[#FCFCFC]">{children}</div>
-      <Footer />
+      
     </>
   );
 }
