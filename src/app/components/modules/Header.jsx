@@ -20,8 +20,8 @@ function Header() {
     </div>
 
     <div className='flex gap-1'>
+      <div className='border border-[#ECECEC] p-1 rounded-lg'><RiSearch2Line className='text-[30px]'/></div>
       <div className='border border-[#ECECEC] p-1 rounded-lg'><PiUserCircleLight className='text-[32px]'/></div>
-      <div className='border border-[#ECECEC] p-1 rounded-lg'><RiSearch2Line className='text-[32px]'/></div>
       </div>  
  </header>
   )
