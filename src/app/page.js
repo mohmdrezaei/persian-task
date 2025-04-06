@@ -4,9 +4,21 @@ import "swiper/css/navigation";
 
 import "swiper/css";
 import { Navigation, Autoplay } from "swiper/modules";
-import { FaHandHoldingDollar } from "react-icons/fa6";
+
+import { IoIosAddCircleOutline } from "react-icons/io";
+
+import { Collapse } from "react-collapse";
+import { useState } from "react";
 
 export default function Home() {
+  const [subMenuIndex, setSubMenuIndex] = useState(null);
+  const isOpenSubMenu = (index) => {
+    if (subMenuIndex === index) {
+      setSubMenuIndex(null);
+    } else {
+      setSubMenuIndex(index);
+    }
+  };
   return (
     <main className="h-svh   ">
       <div className="flex w-[1200px] pt-7 m-auto ">
@@ -187,7 +199,7 @@ export default function Home() {
             کنید تا مشاوران ما به صورت کاملان رایگان شمارا راهنمایی کنند.
           </p>
 
-          <div className="bg-white border border-[#E3E3E3] rounded-lg h-[606px] p-7 text-right">
+          <div className="bg-white border border-[#E3E3E3] rounded-lg h-[606px] p-7 text-right mt-5">
             <div className="grid grid-cols-3 gap-7 rounded-2xl">
               <div>
                 <p>نام و نام خانوادگی خود را وارد کنید</p>
@@ -237,17 +249,116 @@ export default function Home() {
       </section>
 
       <section className="bg-[#FCFCFC] py-10">
-      
-          <div className="flex w-[1200px] border border-[#F9F9F9] bg-white m-auto rounded-lg h-[554px] ">
-            <div >
+        <div className="flex gap-5 w-[1200px] border border-[#F9F9F9] bg-white m-auto rounded-lg h-[554px] py-20 px-10">
+          <div>
             <h1 className="text-[32px] font-[600]">FAQ</h1>
-            <h1 className="text-[24px] font-[600]">سوالات متداولی که از ما می‌پرسید</h1>
-            <p className="text-">
+            <h1 className="text-[24px] font-[600]">
+              سوالات متداولی که از ما می‌پرسید
+            </h1>
+            <p className="text-base w-[357px] font-[500] text-[#303030] leading-8 mt-3">
               سوالات متداولی که ممکن است نیاز شما نیز باشند در اینجا پاسخ داده
               شده اند:
             </p>
+          </div>
+
+          <div className="w-full ">
+            <div
+              onClick={() => isOpenSubMenu(1)}
+              className="bg-[#FCFCFC] border border-[#ECECEC] rounded-lg p-5 cursor-pointer"
+            >
+              <div className="flex justify-between">
+                <p className="font-[600] text-base">
+                 آیا تبلیفات واقعا فروش من روافزایش می ده؟
+                </p>
+                <IoIosAddCircleOutline className="text-[24px]" />
+              </div>
+
+              <Collapse
+                isOpened={subMenuIndex === 1 ? true : false}
+              >
+                <div className="mt-5">
+                  <p>بله، با کمپین های هدفمند، مشتری ها سریع تر پیداتون میکنن</p>
+                </div>
+              </Collapse>
             </div>
-         
+
+            <div
+              onClick={() => isOpenSubMenu(2)}
+              className="bg-[#FCFCFC] border border-[#ECECEC] rounded-lg p-5 mt-5 "
+            >
+              <div className="flex justify-between">
+                <p className="font-[600] text-base">
+                 آیا تبلیفات واقعا فروش من روافزایش می ده؟
+                </p>
+                <IoIosAddCircleOutline className="text-[24px]" />
+              </div>
+
+              <Collapse
+                isOpened={subMenuIndex === 2 ? true : false}
+              >
+                <div className="mt-5">
+                  <p>بله، با کمپین های هدفمند، مشتری ها سریع تر پیداتون میکنن</p>
+                </div>
+              </Collapse>
+            </div>
+            <div
+              onClick={() => isOpenSubMenu(3)}
+              className="bg-[#FCFCFC] border border-[#ECECEC] rounded-lg p-5 mt-5 "
+            >
+              <div className="flex justify-between">
+                <p className="font-[600] text-base">
+                 آیا تبلیفات واقعا فروش من روافزایش می ده؟
+                </p>
+                <IoIosAddCircleOutline className="text-[24px]" />
+              </div>
+
+              <Collapse
+                isOpened={subMenuIndex === 3 ? true : false}
+              >
+                <div className="mt-5">
+                  <p>بله، با کمپین های هدفمند، مشتری ها سریع تر پیداتون میکنن</p>
+                </div>
+              </Collapse>
+            </div>
+            <div
+              onClick={() => isOpenSubMenu(4)}
+              className="bg-[#FCFCFC] border border-[#ECECEC] rounded-lg p-5 mt-5 "
+            >
+              <div className="flex justify-between">
+                <p className="font-[600] text-base">
+                 آیا تبلیفات واقعا فروش من روافزایش می ده؟
+                </p>
+                <IoIosAddCircleOutline className="text-[24px]" />
+              </div>
+
+              <Collapse
+                isOpened={subMenuIndex === 4 ? true : false}
+              >
+                <div className="mt-5">
+                  <p>بله، با کمپین های هدفمند، مشتری ها سریع تر پیداتون میکنن</p>
+                </div>
+              </Collapse>
+            </div>
+            <div
+              onClick={() => isOpenSubMenu(5)}
+              className="bg-[#FCFCFC] border border-[#ECECEC] rounded-lg p-5 mt-5 "
+            >
+              <div className="flex justify-between">
+                <p className="font-[600] text-base">
+                 آیا تبلیفات واقعا فروش من روافزایش می ده؟
+                </p>
+                <IoIosAddCircleOutline className="text-[24px]" />
+              </div>
+
+              <Collapse
+                isOpened={subMenuIndex === 5 ? true : false}
+              >
+                <div className="mt-5">
+                  <p>بله، با کمپین های هدفمند، مشتری ها سریع تر پیداتون میکنن</p>
+                </div>
+              </Collapse>
+            </div>
+          </div>
         </div>
       </section>
     </main>
