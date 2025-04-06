@@ -12,6 +12,21 @@ import { useState } from "react";
 
 export default function Home() {
   const [subMenuIndex, setSubMenuIndex] = useState(null);
+  const [selectedItems, setSelectedItems] = useState({
+    seo: false,
+    webDesign: false,
+    Automation: false,
+    Campaign : false,
+    ContentProduction : false
+  });
+
+  const toggleItem = (itemName) => {
+    setSelectedItems(prev => ({
+      ...prev,
+      [itemName]: !prev[itemName]
+    }));
+  };
+  
   const isOpenSubMenu = (index) => {
     if (subMenuIndex === index) {
       setSubMenuIndex(null);
@@ -204,6 +219,7 @@ export default function Home() {
               <div>
                 <p>نام و نام خانوادگی خود را وارد کنید</p>
                 <input
+                  type="text"
                   className="border border-[#E3E3E3] bg-[#FCFCFC] w-full rounded-2xl px-8 py-2 placeholder:text-[#8A8A8A] placeholder:font-[500] mt-4"
                   placeholder="نام و نام خانوادگی"
                 />
@@ -211,6 +227,7 @@ export default function Home() {
               <div>
                 <p>آدرس ایمیل خود را وارد کنید</p>
                 <input
+                  type="text"
                   className="border border-[#E3E3E3] bg-[#FCFCFC] w-full rounded-2xl px-8 py-2 placeholder:text-[#8A8A8A] placeholder:font-[500] mt-4"
                   placeholder="مثلا email@mail.com"
                 />
@@ -218,6 +235,7 @@ export default function Home() {
               <div>
                 <p>شماره تماس خود را وارد کنید</p>
                 <input
+                  type="text"
                   className="border border-[#E3E3E3] bg-[#FCFCFC] w-full rounded-2xl px-8 py-2 placeholder:text-[#8A8A8A] placeholder:font-[500] mt-4"
                   placeholder="مثلا091212345678"
                 />
@@ -226,10 +244,81 @@ export default function Home() {
 
             <div className="mt-7">
               <p>نوع سرویس (های) مورد نظر را انتخاب کنید</p>
-              <input
-                className="border border-[#E3E3E3] bg-[#FCFCFC] w-full rounded-2xl px-8 py-2 placeholder:text-[#8A8A8A] placeholder:font-[500] mt-5"
-                placeholder="مثلا email@mail.com"
-              />
+              <div className="grid grid-cols-5 mt-5 gap-7">
+              <div
+        className={`flex gap-2 w-full items-center bg-[#FCFCFC] border ${
+          selectedItems.seo ? "border-[#7A3DE2]" : "border-[#E3E3E3]"
+        }  px-4 rounded-2xl cursor-pointer`}
+        onClick={() => toggleItem('seo')}
+      >
+        <input
+          type="checkbox"
+          checked={selectedItems.seo}
+          readOnly
+          className="appearance-none h-5 w-5 border border-gray-300 rounded-md checked:bg-[#7A3DE2] checked:border-transparent focus:outline-none focus:ring-blue-500"
+        />
+        <label className="cursor-pointer text-xs font-[600]">خدمات سئو</label>
+      </div>
+
+      <div
+        className={`flex gap-2 w-full items-center bg-[#FCFCFC] border ${
+          selectedItems.webDesign ? "border-[#7A3DE2]" : "border-[#E3E3E3]"
+        } py-2 px-4 rounded-2xl cursor-pointer`}
+        onClick={() => toggleItem('webDesign')}
+      >
+        <input
+          type="checkbox"
+          checked={selectedItems.webDesign}
+          readOnly
+          className="appearance-none h-5 w-5 border border-gray-300 rounded-md checked:bg-[#7A3DE2] checked:border-transparent focus:outline-none focus:ring-blue-500"
+        />
+        <label className="cursor-pointer text-xs font-[600]">طراحی وب سایت</label>
+      </div>
+      <div
+        className={`flex gap-2 w-full items-center bg-[#FCFCFC] border ${
+          selectedItems.Automation ? "border-[#7A3DE2]" : "border-[#E3E3E3]"
+        } py-2 px-4 rounded-2xl cursor-pointer`}
+        onClick={() => toggleItem('Automation')}
+      >
+        <input
+          type="checkbox"
+          checked={selectedItems.Automation}
+          readOnly
+          className="appearance-none h-5 w-5 border border-gray-300 rounded-md checked:bg-[#7A3DE2] checked:border-transparent focus:outline-none focus:ring-blue-500"
+        />
+        <label className="cursor-pointer text-xs font-[600]">اتوماسیون و بازاریابی </label>
+      </div>
+                
+      <div
+        className={`flex gap-2 w-full items-center bg-[#FCFCFC] border ${
+          selectedItems.Campaign ? "border-[#7A3DE2]" : "border-[#E3E3E3]"
+        } py-2 px-4 rounded-2xl cursor-pointer`}
+        onClick={() => toggleItem('Campaign')}
+      >
+        <input
+          type="checkbox"
+          checked={selectedItems.Campaign}
+          readOnly
+          className="appearance-none h-5 w-5 border border-gray-300 rounded-md checked:bg-[#7A3DE2] checked:border-transparent focus:outline-none focus:ring-blue-500"
+        />
+        <label className="cursor-pointer text-xs font-[600]">کمپین‌های بازاریابی و تبلیغاتی</label>
+      </div>
+      <div
+        className={`flex gap-2 w-full items-center bg-[#FCFCFC] border ${
+          selectedItems.ContentProduction ? "border-[#7A3DE2]" : "border-[#E3E3E3]"
+        } py-2 px-4 rounded-2xl cursor-pointer`}
+        onClick={() => toggleItem('ContentProduction')}
+      >
+        <input
+          type="checkbox"
+          checked={selectedItems.ContentProduction}
+          readOnly
+          className="appearance-none h-5 w-5 border border-gray-300 rounded-md checked:bg-[#7A3DE2] checked:border-transparent focus:outline-none focus:ring-blue-500"
+        />
+        <label className="cursor-pointer text-xs font-[600]">خدمات تولید محتوا </label>
+      </div>
+                
+              </div>
             </div>
             <div className="mt-10">
               <p>در مورد درخواست خود برای ما بنویسید.</p>
@@ -268,16 +357,16 @@ export default function Home() {
             >
               <div className="flex justify-between">
                 <p className="font-[600] text-base">
-                 آیا تبلیفات واقعا فروش من روافزایش می ده؟
+                  آیا تبلیفات واقعا فروش من روافزایش می ده؟
                 </p>
                 <IoIosAddCircleOutline className="text-[24px]" />
               </div>
 
-              <Collapse
-                isOpened={subMenuIndex === 1 ? true : false}
-              >
+              <Collapse isOpened={subMenuIndex === 1 ? true : false}>
                 <div className="mt-5">
-                  <p>بله، با کمپین های هدفمند، مشتری ها سریع تر پیداتون میکنن</p>
+                  <p>
+                    بله، با کمپین های هدفمند، مشتری ها سریع تر پیداتون میکنن
+                  </p>
                 </div>
               </Collapse>
             </div>
@@ -288,16 +377,16 @@ export default function Home() {
             >
               <div className="flex justify-between">
                 <p className="font-[600] text-base">
-                 آیا تبلیفات واقعا فروش من روافزایش می ده؟
+                  آیا تبلیفات واقعا فروش من روافزایش می ده؟
                 </p>
                 <IoIosAddCircleOutline className="text-[24px]" />
               </div>
 
-              <Collapse
-                isOpened={subMenuIndex === 2 ? true : false}
-              >
+              <Collapse isOpened={subMenuIndex === 2 ? true : false}>
                 <div className="mt-5">
-                  <p>بله، با کمپین های هدفمند، مشتری ها سریع تر پیداتون میکنن</p>
+                  <p>
+                    بله، با کمپین های هدفمند، مشتری ها سریع تر پیداتون میکنن
+                  </p>
                 </div>
               </Collapse>
             </div>
@@ -307,16 +396,16 @@ export default function Home() {
             >
               <div className="flex justify-between">
                 <p className="font-[600] text-base">
-                 آیا تبلیفات واقعا فروش من روافزایش می ده؟
+                  آیا تبلیفات واقعا فروش من روافزایش می ده؟
                 </p>
                 <IoIosAddCircleOutline className="text-[24px]" />
               </div>
 
-              <Collapse
-                isOpened={subMenuIndex === 3 ? true : false}
-              >
+              <Collapse isOpened={subMenuIndex === 3 ? true : false}>
                 <div className="mt-5">
-                  <p>بله، با کمپین های هدفمند، مشتری ها سریع تر پیداتون میکنن</p>
+                  <p>
+                    بله، با کمپین های هدفمند، مشتری ها سریع تر پیداتون میکنن
+                  </p>
                 </div>
               </Collapse>
             </div>
@@ -326,16 +415,16 @@ export default function Home() {
             >
               <div className="flex justify-between">
                 <p className="font-[600] text-base">
-                 آیا تبلیفات واقعا فروش من روافزایش می ده؟
+                  آیا تبلیفات واقعا فروش من روافزایش می ده؟
                 </p>
                 <IoIosAddCircleOutline className="text-[24px]" />
               </div>
 
-              <Collapse
-                isOpened={subMenuIndex === 4 ? true : false}
-              >
+              <Collapse isOpened={subMenuIndex === 4 ? true : false}>
                 <div className="mt-5">
-                  <p>بله، با کمپین های هدفمند، مشتری ها سریع تر پیداتون میکنن</p>
+                  <p>
+                    بله، با کمپین های هدفمند، مشتری ها سریع تر پیداتون میکنن
+                  </p>
                 </div>
               </Collapse>
             </div>
@@ -345,16 +434,16 @@ export default function Home() {
             >
               <div className="flex justify-between">
                 <p className="font-[600] text-base">
-                 آیا تبلیفات واقعا فروش من روافزایش می ده؟
+                  آیا تبلیفات واقعا فروش من روافزایش می ده؟
                 </p>
                 <IoIosAddCircleOutline className="text-[24px]" />
               </div>
 
-              <Collapse
-                isOpened={subMenuIndex === 5 ? true : false}
-              >
+              <Collapse isOpened={subMenuIndex === 5 ? true : false}>
                 <div className="mt-5">
-                  <p>بله، با کمپین های هدفمند، مشتری ها سریع تر پیداتون میکنن</p>
+                  <p>
+                    بله، با کمپین های هدفمند، مشتری ها سریع تر پیداتون میکنن
+                  </p>
                 </div>
               </Collapse>
             </div>
