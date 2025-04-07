@@ -3,50 +3,76 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
 import "swiper/css";
 import { Navigation, Autoplay } from "swiper/modules";
+import { IoMdArrowDropright } from "react-icons/io";
+import { IoMdArrowDropleft } from "react-icons/io";
+
 function Slider() {
   return (
     <div className="bg-gradient-to-b from-[#43217C] to-[#7A3DE2]  pt-4 h-[240px]">
-          <div className="mt-5 xl:w-[1200px] m-auto">
+          <div className="mt-5 xl:w-[1200px] m-auto relative">
             <h3 className="text-center text-white text-xl font-[500] ">
               موانع رایج در دریافت خدمات تولید محتوا برای کسب‌وکارها
             </h3>
-            <div className="mt-7 mr-7 lg:mr-0">
-              <Swiper
-                slidesPerView={1.5}
-                centeredSlides={true}
-                spaceBetween={20}
-                navigation={{
-                    enabled : false
-                }}
-                loop={true}
-                autoplay={{
-                  delay: 2500,
-                  pauseOnMouseEnter: true,
-                }}
-                modules={[Navigation, Autoplay]}
-                className="mySwiper"
-                breakpoints={{
-                  200: {
-                    slidesPerView: 1.5,
-                    centeredSlides: false,
-                    navigation: {
-                        enabled: false
-                      }
-                  },
-                  768: {
-                    slidesPerView: 2,
-                    centeredSlides: false,
-                    navigation: {
-                        enabled: true
-                      }
-                  },
-                  1024: {
-                    slidesPerView: 4,
-                    centeredSlides: false
-                  }
-                }}
-              >
+            <div className="hidden md:block"> 
+          <button className="custom-prev absolute border border-[#ECECEC] xl:left-[-27px] left-0 top-[170px] z-10 -translate-y-1/2 bg-white p-2 rounded-lg shadow-lg">
+            <IoMdArrowDropleft className="text-[#515151] text-2xl" />
+          </button>
+          <button className="custom-next absolute border border-[#ECECEC] xl:right-[-27px] right-0 top-[170px] z-10 -translate-y-1/2 bg-white p-2 rounded-lg shadow-lg">
+            <IoMdArrowDropright className="text-[#515151] text-2xl" />
+          </button>
+        </div>
+
+            <div className="mt-7 mr-7 lg:mr-0 ">
+            <Swiper
+  slidesPerView={1.5}
+  centeredSlides={true}
+  spaceBetween={20}
+  navigation={{
+    nextEl: ".custom-next",
+    prevEl: ".custom-prev",
+    enabled: false // غیرفعال به صورت پیش‌فرض
+  }}
+  loop={true}
+  autoplay={{
+    delay: 2500,
+    pauseOnMouseEnter: true,
+  }}
+  modules={[Navigation, Autoplay]}
+  className="mySwiper"
+  breakpoints={{
+    200: {
+      slidesPerView: 1.5,
+      centeredSlides: false,
+      navigation: {
+        enabled: false
+      }
+    },
+    768: {
+      slidesPerView: 2,
+      centeredSlides: false,
+      navigation: {
+        enabled: false
+      }
+    },
+    900: {
+      slidesPerView: 3,
+      centeredSlides: false,
+      navigation: {
+        enabled: false
+      }
+    },
+    1200: {
+      slidesPerView: 4,
+      centeredSlides: false,
+      spaceBetween: 30,
+      navigation: {
+        enabled: true 
+      }
+    }
+  }}
+>
               
+        
                 <SwiperSlide>
                   <div className="bg-white border border-[#E3E3E3] rounded-lg h-[226px] md:w-[282px] ">
                     <img
