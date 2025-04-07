@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Collapse } from "react-collapse";
 import { IoIosAddCircleOutline } from "react-icons/io";
+import { AiOutlineMinusCircle } from "react-icons/ai";
 
 function Accordion() {
   const [subMenuIndex, setSubMenuIndex] = useState(null);
@@ -36,7 +37,11 @@ function Accordion() {
               <p className="font-[600] text-base">
                 آیا تبلیفات واقعا فروش من روافزایش می ده؟
               </p>
-              <IoIosAddCircleOutline className="text-[24px]" />
+              {subMenuIndex === 1 ? (
+                <AiOutlineMinusCircle className="text-[24px]" />
+              ) : (
+                <IoIosAddCircleOutline className="text-[24px]" />
+              )}
             </div>
 
             <Collapse isOpened={subMenuIndex === 1 ? true : false}>
@@ -54,7 +59,11 @@ function Accordion() {
               <p className="font-[600] text-base">
                 آیا تبلیفات واقعا فروش من روافزایش می ده؟
               </p>
-              <IoIosAddCircleOutline className="text-[24px]" />
+              {subMenuIndex === 2 ? (
+                <AiOutlineMinusCircle className="text-[24px]" />
+              ) : (
+                <IoIosAddCircleOutline className="text-[24px]" />
+              )}
             </div>
 
             <Collapse isOpened={subMenuIndex === 2 ? true : false}>
@@ -71,7 +80,11 @@ function Accordion() {
               <p className="font-[600] text-base">
                 آیا تبلیفات واقعا فروش من روافزایش می ده؟
               </p>
-              <IoIosAddCircleOutline className="text-[24px]" />
+              {subMenuIndex === 3 ? (
+                <AiOutlineMinusCircle className="text-[24px]" />
+              ) : (
+                <IoIosAddCircleOutline className="text-[24px]" />
+              )}
             </div>
 
             <Collapse isOpened={subMenuIndex === 3 ? true : false}>
@@ -88,7 +101,11 @@ function Accordion() {
               <p className="font-[600] text-base">
                 آیا تبلیفات واقعا فروش من روافزایش می ده؟
               </p>
-              <IoIosAddCircleOutline className="text-[24px]" />
+              {subMenuIndex === 4 ? (
+                <AiOutlineMinusCircle className="text-[24px]" />
+              ) : (
+                <IoIosAddCircleOutline className="text-[24px]" />
+              )}
             </div>
 
             <Collapse isOpened={subMenuIndex === 4 ? true : false}>
@@ -105,7 +122,11 @@ function Accordion() {
               <p className="font-[600] text-base">
                 آیا تبلیفات واقعا فروش من روافزایش می ده؟
               </p>
-              <IoIosAddCircleOutline className="text-[24px]" />
+              {subMenuIndex === 5 ? (
+                <AiOutlineMinusCircle className="text-[24px]" />
+              ) : (
+                <IoIosAddCircleOutline className="text-[24px]" />
+              )}
             </div>
 
             <Collapse isOpened={subMenuIndex === 5 ? true : false}>
