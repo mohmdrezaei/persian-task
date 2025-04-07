@@ -8,7 +8,7 @@ export default function Home() {
  
   return (
     <main className="  bg-[#FCFCFC]  m-auto pb-10">
-      <div className="py-14 md:py-0">
+      <div className="py-14 lg:py-0 md:mx-5">
       <div className="lg:flex flex-row-reverse w-auto rounded-lg md:rounded-none xl:w-[1200px] pt-7 pb-14 md:pb-0   border border-[#ECECEC] md:border-none mx-7 md:m-auto  bg-white lg:bg-[#FCFCFC]">
         
         <div>
