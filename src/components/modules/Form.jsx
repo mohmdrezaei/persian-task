@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { PiUserCircleLight, PiPhoneLight } from 'react-icons/pi';
 import { IoMailOutline } from 'react-icons/io5';
-import validateForm from '@/core/utils/validation';
+import validateForm from '@/utils/validation';
 
 const Form = () => {
     const [formData, setFormData] = useState({
