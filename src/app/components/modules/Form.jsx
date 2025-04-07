@@ -99,9 +99,9 @@ const Form = () => {
     
 
   return (
-    <div className="bg-white border border-[#E3E3E3] rounded-lg h-[606px] p-7 text-right mt-5">
+    <div className="bg-white border border-[#E3E3E3] rounded-lg lg:h-[606px] p-7 text-right mt-5">
       <form onSubmit={handleSubmit}>
-        <div className="grid grid-cols-3 gap-7 rounded-2xl">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7 rounded-2xl">
           <div className="relative">
             <p className="text-sm font-[600]">
               نام و نام خانوادگی خود را وارد کنید
@@ -165,7 +165,7 @@ const Form = () => {
           {errors.services && (
             <p className="text-red-500 text-xs my-2  mx-3">{errors.services}</p>
           )}
-          <div className="grid grid-cols-5 mt-5 gap-7">
+          <div className="grid grid-cols-2 lg:grid-cols-5 mt-5 gap-7">
     
             <div
               className={`flex gap-2 w-full items-center bg-[#FCFCFC] border ${

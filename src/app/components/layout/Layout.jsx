@@ -6,7 +6,7 @@ function Layout({ children }) {
   return (
     <>
       <Header />
-      <div className="bg-[#FCFCFC]">{children}</div>
+      <div className="">{children}</div>
       
     </>
   );
